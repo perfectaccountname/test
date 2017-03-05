@@ -187,6 +187,12 @@ Environment Variables
 /*--------------------------------------*/
 Ping, FTP, SSH
 /*--------------------------------------*/
+ping <hostname or ip-address>  test connection
+
+File Transfer Protocol
+ftp <ip-address or hostname>	=>> user name, pass
+
+dir, cd "dirname", put <file>, get <file>, quit
 
 
 
