@@ -1,0 +1,47 @@
+Regarding the sample program 9, add following function.
+(1) After create initial 3 data (prepared in program 9),
+insert element 4 after the top. (element 4 data is "cherry")
+
+Regarding the sample program 9, add following function.
+(1) After creating 3 initial data (prepared in program 9),
+insert element 4 after element 1. (element 4 data is "grape")
+[Expand exercise]
+(2) Get “insert number” and “fruit name” by "scanf", and insert the element to the LIST.
+
+Add new element to the LIST
+LIST structure is more easy to add element than array.
+Data : banana
+Pointer : p2
+Pointer : p1
+Data : orange
+Pointer : p3
+Data : apple
+Pointer : NULL
+(1)Create element4 data.
+(2)Copy element1's next pointer to element4's next pointer.
+(3)Set element4 's address to the element1's next pointer.
+
+Exercise 4-2
+Regarding the sample program 9, add following function.
+(1) After create initial 3 data (prepared in program 9),
+remove element 2.
+[Expand exercise]
+(2) Get “remove number” by "scanf", and remove the element from the LIST
+
+LIST structure is more easy to remove element than array.
+Data : banana
+Pointer : p2
+Pointer : p1
+Data : orange
+Pointer : p3
+Data : apple
+Pointer : NULL
+How to remove element 2
+(1) Copy element2's next pointer to element1's next pointer.
+(2) Free memory the data of element 2.
+element 1
+element 2
+element 3
+Free
+Top
+p3
