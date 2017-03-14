@@ -1,0 +1,101 @@
+LIST
+LIST is a set of jointed data elements.
+One element has data and the pointer to next element.
+Sample program 9 show you how to use LIST structure.
+Data : banana
+Pointer : p2
+Pointer : p1
+Data : orange
+Pointer : p3
+Data : apple
+Pointer : NULL
+Last pointer is NULL
+(1)Creates the LIST from array data
+(2)Print the LIST
+(3)Delete the LIST.
+Sample data are fruit names.
+There are 3 fruits in the LIST.
+struct leaf {
+char data[16]; /* string data */
+struct leaf *next; /* pointer to next*/
+};
+One element of LIST
+element 1
+element 2
+element 3
+Top
+0 apple
+1 orange
+2 banana
+Array data
+LIST structure
+Sample program 9 action
+
+struct leaf {
+char data[16]; /* string data */
+struct leaf *next; /* pointer to the next leaf */
+};
+struct leaf *addLeaf(char*, struct leaf *);
+void printLeaves(struct leaf *p);
+void freeLeaves(struct leaf *p);
+int main(void)
+{
+struct leaf *top; /* top of the leaves */
+char *fruits[3] = {"apple", "orange", "banana" } ;
+top = NULL;
+top = addLeaf(fruits[0], top);
+top = addLeaf(fruits[1], top);
+top = addLeaf(fruits[2], top);
+printLeaves(top); /* print elements*/
+freeLeaves(top); /* delete all elements */
+}
+void printLeaves(struct leaf *pL)
+{
+while (pL != NULL) {
+printf("%s\n", pL->data);
+pL = pL->next;
+}
+}
+struct leaf *addLeaf(char *data, struct leaf *top)
+{
+struct leaf *pL;
+pL = (struct leaf*) malloc(sizeof(struct leaf));
+strcpy(pL->data, data);
+/* change pointer to the top */
+pL->next = top; /* Old top is new leaf's next */
+top = pL;/* New top is new leaf's address */
+return top;
+}
+void freeLeaves(struct leaf *pL)
+{
+struct leaf *pLnext;
+while (pL != NULL) {
+pLnext = pL->next;
+free(pL);
+pL = pLnext;
+}
+}
+
+List create step (addLeaf)
+Pointer : p3
+Data : apple
+Pointer : NULL
+element 3
+Top
+Pointer : NULL
+Top
+Pointer : p2
+Data : orange
+Pointer : p3
+Data : apple
+Pointer : NULL
+element 2
+element 3
+Top
+Data : banana
+Pointer : p2
+Pointer : p1
+Data : orange
+Pointer : p3
+Data : apple
+Pointer : NULL
